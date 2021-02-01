@@ -30,6 +30,8 @@ JNIEXPORT void JNICALL Java_Test_ReedSolomonC_rsEncode
     jlong * cint = (*env)->GetLongArrayElements(env, shards, NULL);
     unsigned char **data_blocks = (char **)cint;
     reed_solomon_encode2(rs,data_blocks,len,byteCount);
+
+    (*env)->ReleaseByteArrayElements(env,shards,cint,0);
 };
 
 
@@ -44,6 +46,8 @@ JNIEXPORT void JNICALL Java_Test_ReedSolomonC_rsReconstruct
     unsigned char *marksPrt = (char *)shardPresentTemp;
     reed_solomon_reconstruct(rs,shardsPrt,marksPrt,len,byteCount);
 
+    (*env)->ReleaseByteArrayElements(env,shards,shardsPrtTemp,0);
+    (*env)->ReleaseByteArrayElements(env,shardPresent,shardPresentTemp,0);
 };
 
 

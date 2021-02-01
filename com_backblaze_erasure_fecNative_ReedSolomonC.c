@@ -29,6 +29,8 @@ JNIEXPORT void JNICALL Java_com_backblaze_erasure_fecNative_ReedSolomonC_rsEncod
     jlong * cint = (*env)->GetLongArrayElements(env, shards, NULL);
     unsigned char **data_blocks = (char **)cint;
     reed_solomon_encode2(rs,data_blocks,len,byteCount);
+
+    (*env)->ReleaseByteArrayElements(env,shards,cint,0);
 };
 
 
@@ -42,6 +44,10 @@ JNIEXPORT void JNICALL Java_com_backblaze_erasure_fecNative_ReedSolomonC_rsRecon
     jboolean * shardPresentTemp = (*env)->GetBooleanArrayElements(env, shardPresent, NULL);
     unsigned char *marksPrt = (char *)shardPresentTemp;
     reed_solomon_reconstruct(rs,shardsPrt,marksPrt,len,byteCount);
+
+
+    (*env)->ReleaseByteArrayElements(env,shards,shardsPrtTemp,0);
+    (*env)->ReleaseByteArrayElements(env,shardPresent,shardPresentTemp,0);
 };
 
 

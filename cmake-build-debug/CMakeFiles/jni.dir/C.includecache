@@ -32,19 +32,5 @@ jni_md.h
 
 /Users/king/Documents/workspace/github/reedsolomon_jni/jni_md.h
 
-/Users/king/Documents/workspace/github/reedsolomon_jni/rs.c
-stdio.h
--
-stdlib.h
--
-string.h
--
-assert.h
--
-rs.h
-/Users/king/Documents/workspace/github/reedsolomon_jni/rs.h
-sys/time.h
--
-
 /Users/king/Documents/workspace/github/reedsolomon_jni/rs.h
 
