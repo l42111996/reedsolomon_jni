@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/cc -O3 -DNDEBUG -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -dynamiclib -Wl,-headerpad_max_install_names  -o libjni.dylib -install_name @rpath/libjni.dylib CMakeFiles/jni.dir/rs.c.o CMakeFiles/jni.dir/Test_ReedSolomonC.c.o CMakeFiles/jni.dir/com_backblaze_erasure_fecNative_ReedSolomonC.c.o 
